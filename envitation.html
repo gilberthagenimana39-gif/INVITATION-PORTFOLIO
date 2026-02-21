@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivan & Ibrahim Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./font-6/css/all.css">
+    <style>
+        /* --- Base & Layout --- */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif;
+        }
+        body { 
+            background-color: #f5f5f5; 
+            display: flex; 
+            justify-content: center; 
+            padding: 40px 0; 
+            font-family: 'Playfair Display', serif; 
+        }
+        
+        .invitation-card { 
+            width: 380px; 
+            background-color: white; 
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1); 
+            display: flex; 
+            flex-direction: column; 
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        /* --- Sections Shared Styles --- */
+        .section-padding { 
+            padding: 40px 30px; 
+        }
+        .cursive-header { 
+            font-family: 'Great Vibes', cursive; 
+            font-size: 2.2rem; 
+            color: #333; 
+            margin-bottom: 20px; 
+            font-weight: 400; 
+        }
+        .bordered-box { 
+            border: 1px solid #d1d1d1; 
+            border-radius: 25px; 
+            padding: 40px 25px; 
+            position: relative; 
+            margin-top: 30px; 
+        }
+
+        /* --- 1. Header & Intro --- */
+        .header-top { 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 20px 45px; 
+            border-bottom: 1px solid #eee; 
+            margin-bottom: 20px; 
+        }
+        .h-item { 
+            display: flex; 
+            flex-direction: column; 
+        }
+        .h-val { 
+            font-size: 1.1rem; 
+            color: #333; 
+        }
+        .h-lab { 
+            font-size: 0.75rem; 
+            color: #aaa; 
+        }
+        .couple-names { 
+            font-family: 'Great Vibes', cursive; 
+            font-size: 2.6rem; 
+            margin: 20px 0; }
+
+        /* --- 2. Image Section --- */
+        .photo-wrap { 
+            position: relative; 
+            height: 420px; 
+            overflow: hidden; 
+        }
+        .photo-bg { 
+            width: 100%; 
+            height: 100%; 
+            background: url('./DSC08928-scaled.jpg') center top/cover; ; }
+        .photo-fade { 
+            position: absolute; 
+            top: 0; 
+            width: 100%; 
+            height: 80px; 
+            background: linear-gradient(to bottom, white, transparent); 
+        }
+
+        /* --- 3. Message --- */
+        .msg-area { 
+            position: relative; 
+            border-bottom: 1px solid #f9f9f9; 
+        }
+        .dove { 
+            position: absolute; 
+            bottom: 10px; 
+            right: 10px; 
+            width: 65px; 
+            opacity: 0.4; 
+            pointer-events: none; 
+        }
+
+        /* --- 4. Schedule --- */
+        .date-pin { 
+            position: absolute; 
+            top: -15px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background: white; 
+            border: 1px solid #999; 
+            padding: 4px 20px; 
+            border-radius: 12px; 
+            font-size: 0.9rem; 
+        }
+        .list-events { 
+            list-style: none; 
+            text-align: left; 
+            line-height: 2.2; 
+            color: #444; 
+        }
+
+        /* --- 5. Countdown --- */
+        .timer-flex { 
+            display: flex; 
+            justify-content: center; 
+            gap: 12px; 
+            margin-top: 20px; 
+        }
+        .t-num { 
+            font-size: 2.2rem; 
+            color: #222; 
+        }
+        .t-lab { 
+            font-size: 0.7rem; 
+            color: #888; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+
+        /* --- 6. Location --- */
+        .loc-info { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            margin-top: 10px; 
+        }
+        .address-link { 
+            color: #555; 
+            font-size: 0.95rem; 
+            text-decoration: underline; 
+            cursor: pointer; 
+        }
+
+        /* --- 7. RSVP Form --- */
+        .rsvp-form { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+            text-align: left; 
+        }
+        .input-line { 
+            border: none; 
+            border-bottom: 1px solid #333; 
+            padding: 10px 0; 
+            width: 100%; 
+            font-family: inherit; 
+            font-size: 1rem; 
+            outline: none; 
+            text-align: center; 
+        }
+        .check-item { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            font-size: 0.95rem; 
+            color: #444; 
+            cursor: pointer; 
+        }
+        .check-item a{
+            color: #444;
+            text-decoration: none;
+        }
+        .btn-submit { 
+            background-color: #949191; 
+            color: white; 
+            border: none; 
+            padding: 15px; 
+            border-radius: 15px; 
+            font-size: 0.9rem; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            margin-top: 10px; 
+            transition: 0.3s; 
+        }
+        .btn-submit:hover { 
+            background-color: #7a7777; 
+        }
+
+        hr.divider { 
+            border: none; 
+            border-top: 1px solid #eee; 
+            margin: 40px auto; 
+            width: 80%; 
+        }
+        /* footer -----------------------*/
+         .footer {
+      margin-top: 20px;
+      padding-top: 10px;
+      font-size: 14px;
+      color: #777;
+      position: relative;
+    }
+
+    .footer::before {
+      content: "";
+      width: 120px;
+      height: 3px;
+      background: #1100ff;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card">
+        <div class="header-top">
+            <div class="h-item"><span class="h-val">21.02.26</span><span class="h-lab"><i class="fas fa-calendar-alt"></i>date</span></div>
+            <div class="h-item"><span class="h-val">Jasmin Event</span><span class="h-lab"> <i class="fas fa-map-marker-alt"></i>location</span></div>
+        </div>
+
+        <div class="section-padding">
+            <h2 class="couple-names">Ange d'grace & Bodeur</h2>
+            <h1 style="font-weight: 400; font-size: 1.5rem;">We are getting married!</h1>
+        </div>
+
+        <div class="photo-wrap">
+            <div class="photo-fade"></div>
+            <div class="photo-bg"></div>
+        </div>
+
+        <div class="section-padding msg-area">
+            <h3 class="cursive-header">Dear friends and family!</h3>
+            <p style="line-height: 1.6; color: #444;">On the occasion of our wedding, we would like to invite you to celebrate the beginning of our love.</p>
+            <br>
+            <p style="font-size: 0.85rem; font-style: italic; color: #666;">Reserved for adults 16 and older.</p>
+            <img src="./images.jfif" class="dove">
+        </div>
+
+        <div class="section-padding">
+            <h3 class="cursive-header">Schedule</h3>
+            <div class="bordered-box">
+                <div class="date-pin">16 August</div>
+                <ul class="list-events">
+                    <li><strong>17:00</strong> - Guests arrive</li>
+                    <li><strong>18:00</strong> - Arrival of the bride & groom</li>
+                    <li><strong>19:30</strong> - Dinner</li>
+                    <li><strong>20:30</strong> - Dessert table</li>
+                    <li><strong>22:30</strong> - Slow dance & cake</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-padding" style="background: #fafafa;">
+            <h3 class="cursive-header" style="font-size: 1.6rem;">Starts in</h3>
+            <div class="timer-flex">
+                <div class="h-item"><span class="t-num" id="d">00</span><span class="t-lab">Days</span></div>
+                <div class="t-num">:</div>
+                <div class="h-item"><span class="t-num" id="h">00</span><span class="t-lab">Hours</span></div>
+                <div class="t-num">:</div>
+                <div class="h-item"><span class="t-num" id="m">00</span><span class="t-lab">Mins</span></div>
+                <div class="t-num">:</div>
+                <div class="h-item"><span class="t-num" id="s">00</span><span class="t-lab">Secs</span></div>
+            </div>
+        </div>
+
+        <div class="section-padding">
+            <h3 class="cursive-header">Location</h3>
+            <div class="loc-info">
+                <i class="fas fa-map-marker-alt " style="width: 30px; height: 50px; opacity: 0.6; color: red; "></i>
+                <div>
+                    <p style="font-weight: bold; margin-top: -10px;">Jasmin & Louisa Event</p><br>
+                    <a style="text-decoration: none; color: #1100ff;" href="https://maps.app.goo.gl/XhJFsHisLMkoxUdH7" class="address-link"><b>Map Address</b></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-padding">
+            <div class="bordered-box">
+                <h3 class="cursive-header" style="font-size: 1.6rem; margin-bottom: 5px;">For support</h3>
+                <b><p style="font-size: 1rem; margin-bottom: 30px; color: #1100ff;"><i class="fab fa-mtn"></i>*182*1*1*0781668969#</p></b>
+
+                <p class="cursive-header" style="font-size: 1.6rem; margin-bottom: 5px;">social media platforms</p>
+                    <label class="check-item">
+                         <a href="https://www.instagram.com/jean_bodeur?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i>  Instagram</a>
+                    </label>
+                    <label class="check-item">
+                         <a href=""><i class="fab fa-facebook"></i>  facebook</a>
+                    </label>
+                    <label class="check-item">
+                        <a href=""><i class="fab fa-tiktok"></i>  tikTok</a>
+                    </label>
+                    <label class="check-item">
+                        <a href=""><i class="far fa-envelope-open"></i>  Email</a>
+                    </label>
+                
+            </div>
+        </div>
+
+    <div class="footer">
+      With love, we invite you to celebrate our special day
+    </div>
+    </div>
+    
+
+    <script>
+        function updateTimer() {
+            const target = new Date("August 16, 2026 17:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = target - now;
+
+            if (diff > 0) {
+                document.getElementById("d").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+                document.getElementById("h").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                document.getElementById("m").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                document.getElementById("s").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            }
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
